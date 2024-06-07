@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():  # put application's code here
-    return 'Hello World x2!'
+    return 'Hello World x3!'
 
 
 CORS(app)
