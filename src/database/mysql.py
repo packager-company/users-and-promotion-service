@@ -15,6 +15,8 @@ Base = declarative_base()
 
 DATABASE_URL = f'mysql+pymysql://{db_user}:{db_password}@{db_url}/{db_name}'
 
+print(DATABASE_URL)
+
 engine = create_engine(DATABASE_URL)
 Base.metadata.create_all(bind=engine)
 session_local = sessionmaker(bind=engine)
