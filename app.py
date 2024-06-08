@@ -1,12 +1,10 @@
 from flask import Flask
 from flask_cors import CORS
+from src.infrastructure.routes.routes import users_routes
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World x3!'
+app.register_blueprint(users_routes, url_prefix='/users')
 
 
 CORS(app)
