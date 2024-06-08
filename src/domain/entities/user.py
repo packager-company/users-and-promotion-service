@@ -1,12 +1,15 @@
 import uuid
 
+from datetime import datetime
+
 class User:
-  def __init__(self, first_name: str, last_name: str, email: str, password: str, registration_date: str = None):
+  def __init__(self, first_name: str, last_name: str, email: str, password: str, cellphone: str, registration_date: datetime = None):
     self.id = uuid.uuid4()
     self.first_name = first_name
     self.last_name = last_name
     self.email = email
     self.password = password
+    self.cellphone = cellphone
     self.registration_date = registration_date
 
   def to_dict(self):

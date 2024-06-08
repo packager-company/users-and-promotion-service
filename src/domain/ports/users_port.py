@@ -7,5 +7,5 @@ class UsersPort(ABC):
     pass
 
   @abstractmethod
-  def create_user(self, user: User):
+  def create_user(self, user: User) -> User:
     pass

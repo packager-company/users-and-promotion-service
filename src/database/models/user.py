@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, DateTime, func
 from src.database.mysql import Base
 
 class User(Base):
@@ -9,7 +9,8 @@ class User(Base):
   last_name = Column(String(255), nullable=False)
   email = Column(String(255), nullable=False)
   password = Column(String(255), nullable=False)
-  registration_date = Column(String(255), nullable=True)
+  cellphone = Column(String(255), nullable=True)
+  registration_date = Column(DateTime, server_default=func.utcnow(), nullable=False)
 
   def to_dict(self):
     return {

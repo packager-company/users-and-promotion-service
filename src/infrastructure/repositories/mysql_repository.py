@@ -7,10 +7,10 @@ class UsersRepository(UsersPort):
   def __init__(self):
     Base.metadata.create_all(bind=engine)
     self.db = session_local()
-  
-  def create_user(self, user: User):
+
+  def create_user(self, user: User) -> User:
     user_model = UserModel(**user.to_dict())
     self.db.add(user_model)
     self.db.commit()
     self.db.refresh(user_model)
-    return user_model.to_dict()
+    return user_model
