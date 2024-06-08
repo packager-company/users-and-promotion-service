@@ -1,7 +1,7 @@
-from src.database.mysql import Base, engine, session_local
-from src.database.models.user import User as UserModel
-from src.domain.entities.user import User
-from src.domain.ports.users_port import UsersPort
+from src.users.infrastructure.database.mysql import Base, engine, session_local
+from src.users.infrastructure.database.models.user import User as UserModel
+from src.users.domain.entities.user import User
+from src.users.domain.ports.users_port import UsersPort
 
 class UsersRepository(UsersPort):
   def __init__(self):

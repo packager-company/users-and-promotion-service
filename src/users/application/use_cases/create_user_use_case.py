@@ -1,4 +1,4 @@
-from src.domain.ports.users_port import UsersPort, User
+from src.users.domain.ports.users_port import UsersPort, User
 
 class CreateUserUseCase:
   def __init__(self, users_port: UsersPort):

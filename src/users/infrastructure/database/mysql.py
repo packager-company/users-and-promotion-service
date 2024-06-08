@@ -2,6 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
+from urllib.parse import quote
 import os
 
 load_dotenv()
@@ -13,7 +14,9 @@ db_name = os.getenv('DBNAME')
 
 Base = declarative_base()
 
-DATABASE_URL = f'mysql+pymysql://{db_user}:{db_password}@{db_url}/{db_name}'
+encoded_password = quote(db_password, safe='')
+
+DATABASE_URL = f'mysql+pymysql://{db_user}:{encoded_password}@{db_url}/{db_name}'
 
 print(DATABASE_URL)
 

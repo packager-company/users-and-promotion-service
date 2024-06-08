@@ -1,5 +1,5 @@
-from src.domain.ports.users_port import UsersPort
-from src.application.use_cases.create_user_use_case import CreateUserUseCase
+from src.users.domain.ports.users_port import UsersPort
+from src.users.application.use_cases.create_user_use_case import CreateUserUseCase
 
 class UsersController:
   def __init__(self, users_port: UsersPort):
