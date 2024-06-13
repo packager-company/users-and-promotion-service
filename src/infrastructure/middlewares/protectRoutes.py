@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from src.UserAndPromotionService.Infrastructure.Middlewares.functionJWT import validate_token
+from src.infrastructure.middlewares.functionJWT import validate_token
 
 def token_required(f):
     def wrapper(*args, **kwargs):

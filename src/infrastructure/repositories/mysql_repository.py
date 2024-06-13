@@ -14,3 +14,7 @@ class UsersRepository(UsersPort):
     self.db.commit()
     self.db.refresh(user_model)
     return user_model
+
+  def get_user_by_email(self, email: str) -> User | None:
+    user = self.db.query(UserModel).filter(UserModel.email == email).first()
+    return user

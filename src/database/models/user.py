@@ -10,8 +10,7 @@ class User(Base):
   email = Column(String(255), nullable=False)
   password = Column(String(255), nullable=False)
   cellphone = Column(String(255), nullable=True)
-  registration_date = Column(DateTime, server_default=func.utcnow(), nullable=False)
-
+  registration_date = Column(DateTime, server_default=func.current_timestamp(), nullable=False)
   def to_dict(self):
     return {
       'id': self.id,
