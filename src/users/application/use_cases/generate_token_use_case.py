@@ -1,5 +1,5 @@
-from src.domain.ports.users_port import UsersPort
-from src.infrastructure.middlewares.functionJWT import write_token
+from src.users.domain.ports.users_port import UsersPort
+from src.users.infrastructure.middlewares.functionJWT import write_token
 import bcrypt
 
 
