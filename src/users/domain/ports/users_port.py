@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from src.domain.entities.user import User
+from src.users.domain.entities.user import User
 
 class UsersPort(ABC):
   @abstractmethod

@@ -1,7 +1,7 @@
 from flask import Blueprint, request
 
-from src.infrastructure.controllers.users_controller import UsersController
-from src.infrastructure.repositories.mysql_repository import UsersRepository
+from src.users.infrastructure.controllers.users_controller import UsersController
+from src.users.infrastructure.repositories.user_repository import UsersRepository
 
 repository = UsersRepository()
 controller = UsersController(repository)
